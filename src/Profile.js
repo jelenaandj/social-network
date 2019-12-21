@@ -50,11 +50,10 @@ useEffect(()=>{
     return (
         <div>
             
-            <p>{person.firstName}</p>
-            <p>{person.surname}</p>
+            <p>{person.firstName} {person.surname}</p>
             <p>{person.age}</p>
             <p>{person.gender}</p>
-            <label>Direct friends</label>
+            <label>Direct friends</label> 
             <div>
                 {friends.map(friends=>{return <p key={friends.id} friends={friends}>{friends.firstName} {friends.surname}</p>})}
             </div>

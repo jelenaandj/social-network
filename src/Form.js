@@ -28,7 +28,7 @@ const handleButton=(e)=>{
             <form>
                 <input type='text' id='name' placeholder='Name'onInput={handleNameInput}/>
                 <input type='text' id='surname' placeholder='Surname'onInput={handleSurnameInput}/>
-                <button type='submit' value='submit' onClick={handleButton}/>
+                <button type='submit' onClick={handleButton}>Submit</button>
             </form>
                 <div>
                     { <Profile person={person} key={person.id} props={data} />}
