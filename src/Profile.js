@@ -21,14 +21,14 @@ useEffect(()=>{
 console.log(friends)
 
 useEffect(()=>{
+    let temp=[];
     friends.forEach(friend => {
-        let temp=[];
         friend.friends.forEach(fof => {
         temp.push(props.props.find(x=>x.id===fof));
         });
-        setFof(temp);
     });
 
+    setFof(temp);
 },[friends,props.props])
 
     
@@ -56,4 +56,4 @@ useEffect(()=>{
     )
 }
 
-export default Profile
+export default Profile 
