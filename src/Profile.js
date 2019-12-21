@@ -21,8 +21,6 @@ useEffect(()=>{
 console.log(friends)
 
 useEffect(()=>{
-
-
     friends.forEach(friend => {
         let temp=[];
         friend.friends.forEach(fof => {
@@ -48,7 +46,11 @@ useEffect(()=>{
             <p>{person.gender}</p>
             <label>Direct friends</label>
             <div>
-            {friends.map(friends=>{return <p key={friends.id} friends={friends}>{friends.firstName} {friends.surname}</p>})}
+                {friends.map(friends=>{return <p key={friends.id} friends={friends}>{friends.firstName} {friends.surname}</p>})}
+            </div>
+            <label>Friends of Friends</label>
+            <div>
+                {fof.filter(fof=>fof.id !== person.id).map(fof=>{return <p fof={fof} friends={friends} key={fof.id} >{fof.firstName} {fof.surname}</p>})}
             </div>
         </div>
     )
