@@ -18,17 +18,28 @@ const handleSurnameInput=(e)=>{
     setSurname(e.target.value)
 }
 
-const handleButton=(e)=>{
-    e.preventDefault();
-    setPerson(data.filter(person=>person.firstName===name && person.surname===surname)[0]);
-}
+    const handleButton=(e)=>{
+      
+        if(name!==''){
+           let filteredData =data.filter(person=>person.firstName===name && person.surname===surname);
+           if(filteredData.length!==0){
+            setPerson(filteredData[0]);
+           }else{
+            alert('Error')
+           }
+        }else{
+            alert('Error')
+        }  
+        e.preventDefault();
+    }
+
 
    return (
-        <div>
+        <div className='form'>
             <form>
                 <input type='text' id='name' placeholder='Name'onInput={handleNameInput}/>
                 <input type='text' id='surname' placeholder='Surname'onInput={handleSurnameInput}/>
-                <button type='submit' onClick={handleButton}>Submit</button>
+                <button type='submit' id='button' onClick={handleButton}>Submit</button>
             </form>
                 <div>
                     { <Profile person={person} key={person.id} props={data} />}

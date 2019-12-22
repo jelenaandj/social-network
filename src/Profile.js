@@ -43,16 +43,14 @@ useEffect(()=>{
 
     
     console.log(fof);
-// const fof=props.props.includes(friends.friends)
-// console.log(fof)
-
 
     return (
-        <div>
+        <div className='profile'>
             
-            <p>{person.firstName} {person.surname}</p>
-            <p>{person.age}</p>
-            <p>{person.gender}</p>
+            <p className='personP'>{person.firstName} {person.surname}</p>
+            <p>Age: {person.age}</p>
+            <p>Gender: {person.gender}</p>
+            <hr/>
             <label>Direct friends</label> 
             <div>
                 {friends.map(friends=>{return <p key={friends.id} friends={friends}>{friends.firstName} {friends.surname}</p>})}
